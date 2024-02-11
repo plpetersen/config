@@ -1,0 +1,4 @@
+## disable all from kzd
+*/*::kzd -*
+## enable some I want
+net-misc/rustdesk::kzd -* ~amd64

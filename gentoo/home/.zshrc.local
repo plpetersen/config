@@ -1,0 +1,10 @@
+autoload -U compinit promptinit
+compinit
+#promptinit; prompt gentoo
+zstyle ':completion::complete:*' use-cache 1
+
+alias estall="sudo emerge --quiet-build --keep-going"
+alias editmake="sudo vim /etc/portage/make.conf"
+
+#changed in /etc/profile
+#export EDITOR=/usr/bin/vim

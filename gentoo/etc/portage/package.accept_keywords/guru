@@ -1,0 +1,5 @@
+## disable all from kzd
+*/*::guru -*
+## enable some I want
+gui-libs/xdg-desktop-portal-hyprland::guru -* ~amd64
+dev-cpp/sdbus-c::guru -* ~amd64
