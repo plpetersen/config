@@ -1,5 +1,6 @@
 set clipboard+=unnamedplus
 set scrolloff=3
+set mouse=v " disable mousing visual mode to allow copying
 
 " map ;; to Esc so that we can exit insert mode easily 
 map! ;; <Esc>
@@ -20,7 +21,7 @@ nnoremap <C-del> daw
 " move normally by using Alt (formerly Ctrl)
 inoremap <A-h> <Left>
 inoremap <A-j> <Down>
-inoremap <Ak> <Up>
+inoremap <A-k> <Up>
 inoremap <A-l> <Right>
 " Don't need these for command mode honestly
 "cnoremap <C-h> <Left>
