@@ -3,7 +3,11 @@ set scrolloff=3
 set mouse=v " disable mousing visual mode to allow copying
 
 " map ;; to Esc so that we can exit insert mode easily 
-map! ;; <Esc>
+" changed away from map! for clarity
+" map! ;; <Esc>
+" when editing this make sure the lines do not end with space!
+imap ;; <Esc>
+nmap ;; <Esc>
 
 " always respect word wrapping when navigating up/down
 " v:count is to ignore this on #+<move key> expressions
