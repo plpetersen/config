@@ -17,9 +17,11 @@ noremap j gj
 noremap k gk
 
 " support control + backspace/del functionality of non-vim editors
-inoremap <C-h> <C-w>
+" inoremap <C-h> <C-w>
+inoremap <C-BS> <C-w>
 inoremap <C-del> <cmd>norm! dw<CR>
-nnoremap <C-h> <space>db
+" nnoremap <C-h> <space>db
+nnoremap <C-BS> <space>db
 nnoremap <C-del> daw
 
 " move normally by using Alt (formerly Ctrl)
