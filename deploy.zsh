@@ -38,17 +38,33 @@ for dir in ${selected_dirs[@]}; do
     target=${file:1}
     # Replace /home with interpreted value of ~ (user's home)
     target=${target/\/home/~}
-    #echo $target
+    target_dir=$(dirname $target)
     #echo $file
+    echo -n $target
+    if [[ $target = $HOME* ]]; then
+      in_home=true 
+    else
+      in_home=false
+    fi
+    echo $in_home
 
     if prompt "Update file $target?"; then
       # back up the file if it already exists
       if [[ -f "$target" ]]; then
 	echo "Backing up $target"
-        mv $target{,.bak-$(date --iso-8601=seconds)}
+	if [ $in_home]; then
+	  mv $target{,.bak-$(date --iso-8601=seconds)}
+        else  
+	  sudo mv $target{,.bak-$(date --iso-8601=seconds)}
+	fi
       fi
+
       echo "Updating $target"
-      cp $file $target
+      if [ $in_home]; then
+        cp $file $target
+      else  
+        sudo cp $file $target
+      fi
       echo
     fi
   done
